@@ -1,0 +1,100 @@
+<app-navbar></app-navbar>
+<div class="m-4 mt-16 flex flex-col">
+  <div class="-m-1.5 overflow-x-auto">
+    <div class="p-1.5 min-w-full inline-block align-middle">
+      <h1 class="text-center text-3xl uppercase m-2">Employee Data</h1>
+      <div class="border rounded-lg shadow overflow-hidden">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-50">
+            <tr>
+              <th
+                scope="col"
+                class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase"
+              >
+                Name
+              </th>
+
+              <th
+                scope="col"
+                class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase"
+              >
+                Age
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase"
+              >
+                Date of Birth
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase"
+              >
+                Mobile
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase"
+              >
+                Email
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase"
+              >
+                Edit
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase"
+              >
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr *ngFor="let user of users">
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
+                {{ user.name }}
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
+                {{ user.age }}
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
+                {{ user.dob }}
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
+                {{ user.mobile }}
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
+                {{ user.email }}
+              </td>
+              <td
+                class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium"
+              >
+                <button
+                  type="button"
+                  class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none"
+                  (click)="editData(user)"
+                >
+                  Edit
+                </button>
+              </td>
+              <td
+                class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium"
+              >
+                <button
+                  type="button"
+                  class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none"
+                  (click)="deleteData(user.id)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
